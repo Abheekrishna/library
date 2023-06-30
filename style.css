@@ -8,6 +8,16 @@ body {
     font-family: sans-serif;
 }
 
+.newBook {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 150px;
+    background-color: rgb(24, 143, 255);
+    color: #fff;
+    cursor: pointer;
+    margin: 50px;
+}
+
 .forms {
     display: none;
     flex-direction: column;
