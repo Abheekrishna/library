@@ -38,6 +38,12 @@ body {
     width: 300px;
     padding: 10px 15px 10px 15px;
 }
+
+input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
 .submit {
     padding: 10px 15px;
     font-size: 0.9rem;
