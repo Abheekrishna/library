@@ -1,3 +1,20 @@
+const addBtn = document.getElementById('newBook');
+const formsDiv = document.getElementById('forms');
+
+
+let count = 1;
+
+addBtn.addEventListener('click', () => {
+    
+    if(count === 1) {
+        formsDiv.style.display = 'flex';
+        count = 2;
+    } else if(count === 2) {
+        formsDiv.style.display = 'none';
+        count = 1;
+    }
+})
+
 let myLibrary = [];
 
 
