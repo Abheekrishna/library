@@ -1,0 +1,44 @@
+*::after,*::before,* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid gray;
+}
+
+.labels {
+    margin-bottom: 8px;
+    text-align: left;
+}
+.inputs {
+    margin-bottom: 25px;
+    /* padding: 10px 20px 10px 15px; */
+    width: 300px;
+    padding: 10px 15px 10px 15px;
+}
+.submit {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    background-color: rgb(24, 143, 255);
+    color: #fff;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+}
