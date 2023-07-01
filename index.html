@@ -8,8 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <button id="newBook" class="newBook">New Book</button>
+        <div class="header">
+            <button id="newBook" class="newBook">New Book</button>
 
+        </div>
+        
         <div class="forms" id="forms">
         <form class="form" id="form">
             <label class="labels" for="title">Title<span class="required">*</span></label>
@@ -21,9 +24,10 @@
             <label class="labels" for="page">Pages<span class="required">*</span></label>
             <input class="inputs" type="number" required id="page" placeholder="Pages">
 
-
+            <div class="checkbox">
             <label class="labels" for="read">Read or not</label>
-            <input type="checkbox" id="read">
+            <input title="Yes" type="checkbox" id="read">
+        </div>
 
             <input id="submit" class="submit" type="button" value="Add book">
         </form>

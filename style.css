@@ -8,9 +8,15 @@ body {
     font-family: sans-serif;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .newBook {
-    padding: 10px 15px;
+    padding: 15px 40px;
     border: none;
+    font-size: 1rem;
     border-radius: 150px;
     background-color: rgb(24, 143, 255);
     color: #fff;
@@ -20,12 +26,9 @@ body {
 
 .forms {
     display: none;
-    position: absolute;
     flex-direction: column;
     align-items: center;
     z-index: 100;
-    left: 35%;
-    top: 10%;
 }
 
 .form {
@@ -38,6 +41,11 @@ body {
     animation: scaleAnimation 0.5s ease-in-out;
     background-color: #fff;
     border: 1px solid rgb(190, 190, 190);
+}
+.checkbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
 }
 
 @keyframes scaleAnimation {
@@ -52,6 +60,7 @@ body {
 .labels {
     margin-bottom: 8px;
     text-align: left;
+    width: 100%;
 }
 
 .required {
@@ -81,6 +90,12 @@ input[type="number"]::-webkit-inner-spin-button,
     margin-bottom: 25px;
     outline: none;
 }
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .submit {
     padding: 10px 15px;
@@ -120,4 +135,5 @@ input[type="number"]::-webkit-inner-spin-button,
     border-radius: 150px;
     cursor: pointer;
     margin-top: 15px;
+    margin-left: 10px;
 }

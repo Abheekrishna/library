@@ -39,9 +39,10 @@ const render = () => {
         <p class="cardText">${book.author}</p>
         <p class="cardText">${book.pages}</p>
         <p class="cardText">${book.read ? "Read" : "Not Read"}</p>
-        <button id="remove" onclick="toggleRead(${i})" class="remove">Toggle Read</button>
-
+        <div class="buttons">
+        <button id="remove" onclick="toggleRead(${i})" class="remove">Edit</button>
         <button id="remove" onclick="remove(${i})" class="remove">Remove</button>
+        </div>
         `;
         cardsDiv.appendChild(bookEle);
     }
