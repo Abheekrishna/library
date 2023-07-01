@@ -20,19 +20,24 @@ body {
 
 .forms {
     display: none;
+    position: absolute;
     flex-direction: column;
     align-items: center;
+    z-index: 100;
+    left: 35%;
+    top: 10%;
 }
 
 .form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-top: 30px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     animation: scaleAnimation 0.5s ease-in-out;
+    background-color: #fff;
+    border: 1px solid rgb(190, 190, 190);
 }
 
 @keyframes scaleAnimation {
@@ -85,4 +90,35 @@ input[type="number"]::-webkit-inner-spin-button,
     border: none;
     border-radius: 150px;
     cursor: pointer;
+}
+
+.cards {
+    margin-left: 35px;
+    text-align: center;
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(100px , 300px));
+}
+
+.card {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0px 25px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 15px;
+    padding: 30px 50px;
+    font-size: 1.2rem;
+    margin: 15px;
+}
+.cardText {
+    margin-bottom: 15px;
+}
+.remove {
+    display: none;
+    padding: 10px 15px;
+    font-size: 0.8rem;
+    background-color: rgb(24, 143, 255);
+    color: #fff;
+    border: none;
+    border-radius: 150px;
+    cursor: pointer;
+    margin-top: 15px;
 }

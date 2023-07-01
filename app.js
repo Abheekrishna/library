@@ -6,6 +6,9 @@ const pagesInput = document.getElementById('page');
 const readInput = document.getElementById('read');
 const submitBtn = document.getElementById('submit');
 
+const cardsDiv = document.getElementById('cards');
+const cardDiv = document.getElementById('card');
+
 
 let count = 1;
 
@@ -19,9 +22,6 @@ function Book(title, author, pages, read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.info = function () {
-        return `${title}, ${author}, ${pages}, ${read}`;
-    }
 }
 
 
@@ -34,13 +34,33 @@ function addBookToLibrary() {
             formsDiv.style.display = 'none';
             count = 1;
         }
-    })
-    
-    submitBtn.addEventListener('click', () => {
-        console.log(titleInput.value);
-        console.log(authorInput.value);
-        console.log(pagesInput.value);
-        console.log(readInput.value);
+
+        
+        submitBtn.addEventListener('click', () => {
+            const bookCard = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
+            console.log(bookCard);
+            const title = document.createElement('p');
+            const author = document.createElement('p');
+            const page = document.createElement('p');
+            const read = document.createElement('p');
+
+            cardsDiv.style.display = 'grid';
+            title.classList.add('cardText');
+            author.classList.add('cardText');
+            page.classList.add('cardText');
+            read.classList.add('cardText');
+
+            title.innerText = `${bookCard.title}`;
+            author.innerText = `${bookCard.author}`;
+            page.innerText = `${bookCard.pages}`;
+            read.innerText = `${bookCard.read}`
+
+            cardDiv.appendChild(title);
+            cardDiv.appendChild(author);
+            cardDiv.appendChild(page);
+            cardDiv.appendChild(read);
+
+        })
     })
 }
 
