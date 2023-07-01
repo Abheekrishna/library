@@ -95,7 +95,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .cards {
     margin-left: 35px;
     text-align: center;
-    display: none;
+    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px , 300px));
 }
 
@@ -111,8 +111,7 @@ input[type="number"]::-webkit-inner-spin-button,
 .cardText {
     margin-bottom: 15px;
 }
-.remove {
-    display: none;
+.remove { 
     padding: 10px 15px;
     font-size: 0.8rem;
     background-color: rgb(24, 143, 255);

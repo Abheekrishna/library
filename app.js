@@ -6,8 +6,9 @@ const pagesInput = document.getElementById('page');
 const readInput = document.getElementById('read');
 const submitBtn = document.getElementById('submit');
 
-const cardsDiv = document.getElementById('cards');
-const cardDiv = document.getElementById('card');
+const cardDiv = document.getElementById('cards');
+
+const removeBtn = document.getElementById('remove');
 
 
 let count = 1;
@@ -16,6 +17,40 @@ let count = 1;
 
 let myLibrary = [];
 
+addBtn.addEventListener('click', () => {
+    if(count === 1) {
+        formsDiv.style.display = 'flex';
+        count = 2;
+    } else if(count === 2) {
+        formsDiv.style.display = 'none';
+        count = 1;
+    }
+})
+
+const render = () => {
+    const cardsDiv = document.getElementById('cards');
+    cardsDiv.innerHTML = '';
+    for(let i = 0; i < myLibrary.length; i++) {
+        let book = myLibrary[i];
+        let bookEle = document.createElement('div');
+        bookEle.classList.add('card');
+        bookEle.innerHTML = `
+        <p class="cardText">${book.title}</p>
+        <p class="cardText">${book.author}</p>
+        <p class="cardText">${book.pages}</p>
+        <p class="cardText">${book.read ? "Read" : "Not Read"}</p>
+        <button id="remove" onclick="toggleRead(${i})" class="remove">Toggle Read</button>
+
+        <button id="remove" onclick="remove(${i})" class="remove">Remove</button>
+        `;
+        cardsDiv.appendChild(bookEle);
+    }
+}
+
+const remove = (index) => {
+    myLibrary.splice(index ,1)
+    render();
+}
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -24,44 +59,19 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
-
-function addBookToLibrary() {
-    addBtn.addEventListener('click', () => {
-        if(count === 1) {
-            formsDiv.style.display = 'flex';
-            count = 2;
-        } else if(count === 2) {
-            formsDiv.style.display = 'none';
-            count = 1;
-        }
-
-        
-        submitBtn.addEventListener('click', () => {
-            const bookCard = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.value);
-            console.log(bookCard);
-            const title = document.createElement('p');
-            const author = document.createElement('p');
-            const page = document.createElement('p');
-            const read = document.createElement('p');
-
-            cardsDiv.style.display = 'grid';
-            title.classList.add('cardText');
-            author.classList.add('cardText');
-            page.classList.add('cardText');
-            read.classList.add('cardText');
-
-            title.innerText = `${bookCard.title}`;
-            author.innerText = `${bookCard.author}`;
-            page.innerText = `${bookCard.pages}`;
-            read.innerText = `${bookCard.read}`
-
-            cardDiv.appendChild(title);
-            cardDiv.appendChild(author);
-            cardDiv.appendChild(page);
-            cardDiv.appendChild(read);
-
-        })
-    })
+Book.prototype.toggleRead = function () {
+    this.read = !this.read;
 }
 
-addBookToLibrary();
+function toggleRead(index) {
+    myLibrary[index].toggleRead();
+    render();
+}
+
+function addBookToLibrary() {
+    let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, readInput.checked);
+    myLibrary.push(newBook);
+    render();
+}
+
+submitBtn.addEventListener('click',addBookToLibrary )
