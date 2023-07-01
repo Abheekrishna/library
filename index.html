@@ -13,20 +13,26 @@
         <div class="forms" id="forms">
         <form class="form" id="form">
             <label class="labels" for="title">Title<span class="required">*</span></label>
-            <input class="inputs" type="text" required id="title" placeholder="Enter the title of the book.">
+            <input class="inputs" type="text" required id="title" placeholder="Book title">
 
             <label class="labels" for="author">Author<span class="required">*</span></label>
-            <input class="inputs" type="text" required id="author" placeholder="Enter the name of the author.">
+            <input class="inputs" type="text" required id="author" placeholder="Author">
 
             <label class="labels" for="page">Pages<span class="required">*</span></label>
-            <input class="inputs" type="number" required id="page" placeholder="How many pages are there?">
+            <input class="inputs" type="number" required id="page" placeholder="Pages">
+
 
             <label class="labels" for="read">Read or not</label>
-            <input class="inputs checkbox" type="checkbox" id="read">
+            <select id="read">
+                <option value="yes">Yes 😁</option>
+                <option value="no">No 🙃</option>
+            </select>
 
             <input id="submit" class="submit" type="button" value="Add book">
         </form>
     </div>
+
+
 
 
     </div>
