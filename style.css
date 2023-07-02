@@ -239,3 +239,12 @@ footer {
     text-align: center;
     padding: 10px;
   }
+
+
+
+  @media only screen and (max-width: 600px) {
+    .forms {
+        top: 20%;
+        left: 15%;
+    }
+  }
