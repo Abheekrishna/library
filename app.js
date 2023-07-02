@@ -5,6 +5,7 @@ const authorInput = document.getElementById('author');
 const pagesInput = document.getElementById('page');
 const readInput = document.getElementById('read');
 const submitBtn = document.getElementById('submit');
+const year = document.getElementById('year');
 
 const cardDiv = document.getElementById('cards');
 
@@ -73,3 +74,6 @@ function addBookToLibrary() {
 }
 
 submitBtn.addEventListener('click',addBookToLibrary )
+
+const newYear = (new Date()).getFullYear();
+year.innerText = `${newYear}`;
