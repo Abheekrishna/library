@@ -248,3 +248,10 @@ footer {
         left: 15%;
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    .forms {
+        top: 20%;
+        left: 5%;
+    }
+  }
