@@ -6,6 +6,8 @@ const pagesInput = document.getElementById('page');
 const readInput = document.getElementById('read');
 const submitBtn = document.getElementById('submit');
 const year = document.getElementById('year');
+const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('close');
 
 const cardDiv = document.getElementById('cards');
 
@@ -21,12 +23,20 @@ let myLibrary = [];
 addBtn.addEventListener('click', () => {
     if(count === 1) {
         formsDiv.style.display = 'flex';
+        overlay.classList.add('overlay');
         count = 2;
     } else if(count === 2) {
         formsDiv.style.display = 'none';
+        overlay.classList.remove('overlay');
         count = 1;
     }
 })
+
+closeBtn.addEventListener('click', () => {
+    formsDiv.style.display = 'none';
+    overlay.classList.remove('overlay');
+})
+
 
 const render = () => {
     const cardsDiv = document.getElementById('cards');
