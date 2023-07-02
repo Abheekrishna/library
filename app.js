@@ -35,9 +35,9 @@ const render = () => {
         let bookEle = document.createElement('div');
         bookEle.classList.add('card');
         bookEle.innerHTML = `
-        <p class="cardText">"📕 ${book.title}"</p>
-        <p class="cardText">📝 ${book.author}</p>
-        <p class="cardText">📌 ${book.pages}</p>
+        <p class="cardText title">"📕 ${book.title}"</p>
+        <p class="cardText author">📝 ${book.author}</p>
+        <p class="cardText page">📌 ${book.pages}</p>
         <p class="cardText read" onclick="toggleRead(${i})">${book.read ? "Read" : "Not Read"}</p>
         <button id="remove" onclick="remove(${i})" class="remove">Remove</button>
         `;
