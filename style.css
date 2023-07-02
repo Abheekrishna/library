@@ -27,6 +27,12 @@ body {
     cursor: pointer;
     margin: 50px;
 }
+.newBook:hover {
+    background-color: rgb(61, 161, 255);
+}
+.newBook:active {
+    background-color: rgb(24, 143, 255);
+}
 
 .forms {
     display: none;
@@ -110,6 +116,12 @@ input[type="number"]::-webkit-inner-spin-button,
     border-radius: 150px;
     cursor: pointer;
 }
+.submit:hover {
+    background-color: rgb(61, 161, 255);
+}
+.submit:active {
+    background-color: rgb(24, 143, 255);
+}
 
 .cards {
     place-content: center;
@@ -155,4 +167,11 @@ input[type="number"]::-webkit-inner-spin-button,
     border-radius: 5px;
     cursor: pointer;
     margin-top: 15px;
+    transition: all 0.2s ease-in-out;
+}
+.remove:hover {
+    background-color: rgb(61, 161, 255);
+}
+.remove:active {
+    background-color: rgb(24, 143, 255);
 }
