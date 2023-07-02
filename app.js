@@ -14,22 +14,13 @@ const cardDiv = document.getElementById('cards');
 const removeBtn = document.getElementById('remove');
 
 
-let count = 1;
-
 
 
 let myLibrary = [];
 
 addBtn.addEventListener('click', () => {
-    if(count === 1) {
         formsDiv.style.display = 'flex';
         overlay.classList.add('overlay');
-        count = 2;
-    } else if(count === 2) {
-        formsDiv.style.display = 'none';
-        overlay.classList.remove('overlay');
-        count = 1;
-    }
 })
 
 closeBtn.addEventListener('click', () => {
