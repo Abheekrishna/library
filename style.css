@@ -11,6 +11,20 @@ body {
     outline: none !important;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(24, 143, 255); 
+    border-radius: 3px;
+  }
+  
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
 
 
 .header {
