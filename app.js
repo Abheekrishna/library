@@ -19,8 +19,12 @@ const removeBtn = document.getElementById('remove');
 let myLibrary = [];
 
 addBtn.addEventListener('click', () => {
-        formsDiv.style.display = 'flex';
-        overlay.classList.add('overlay');
+    titleInput.value = '';
+    authorInput.value = '';
+    pagesInput.value = '';
+    readInput.checked = '';
+    formsDiv.style.display = 'flex';
+    overlay.classList.add('overlay');
 })
 
 closeBtn.addEventListener('click', () => {
