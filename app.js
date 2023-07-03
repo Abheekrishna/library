@@ -37,6 +37,9 @@ const render = () => {
     const cardsDiv = document.getElementById('cards');
     cardsDiv.innerHTML = '';
     for(let i = 0; i < myLibrary.length; i++) {
+        if(book.title === '' || book.author === '' || book.pages === '' || book.read === '') {
+            return;
+        };
         let book = myLibrary[i];
         let bookEle = document.createElement('div');
         bookEle.classList.add('card');
