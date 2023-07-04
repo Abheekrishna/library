@@ -31,12 +31,11 @@ closeBtn.addEventListener('click', () => {
 })
 
 
+
 const render = () => {
     const cardsDiv = document.getElementById('cards');
     cardsDiv.innerHTML = '';
-    if(titleInput.value === '' || authorInput.value === '' || pagesInput.value === '') {
-        return;
-    } else {
+    
     for(let i = 0; i < myLibrary.length; i++) {
         let book = myLibrary[i];
         let bookEle = document.createElement('div');
@@ -51,7 +50,7 @@ const render = () => {
         cardsDiv.appendChild(bookEle);
     }
 }
-}
+
 
 const remove = (index) => {
     myLibrary.splice(index ,1)
