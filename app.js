@@ -34,10 +34,10 @@ closeBtn.addEventListener('click', () => {
 const render = () => {
     const cardsDiv = document.getElementById('cards');
     cardsDiv.innerHTML = '';
+    if(titleInput.value === '' || authorInput.value === '' || pagesInput.value === '') {
+        return;
+    } else {
     for(let i = 0; i < myLibrary.length; i++) {
-        if(book.title === '' || book.author === '' || book.pages === '' || book.read === '') {
-            return;
-        };
         let book = myLibrary[i];
         let bookEle = document.createElement('div');
         bookEle.classList.add('card');
@@ -50,6 +50,7 @@ const render = () => {
         `;
         cardsDiv.appendChild(bookEle);
     }
+}
 }
 
 const remove = (index) => {
@@ -84,4 +85,4 @@ submitBtn.addEventListener('click',addBookToLibrary )
 const newYear = (new Date()).getFullYear();
 year.innerText = `${newYear}`;
 
-console.log('Hey I know you\'re a dev!! \nGot an idea 💡. Let\'s work together, contact me 👇🏻 \nabheekrishna17@gmail.com')
+console.log('Hey I know you\'re a dev!! \nGot an idea 💡. Let\'s work together, contact me 👇🏻 \nabheekrishna17@gmail.com');
